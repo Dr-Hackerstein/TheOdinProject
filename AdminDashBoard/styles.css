@@ -1,68 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* Apply box-sizing to all elements */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: none;
 }
 
-.grid {
+/* Add pointer cursor on button hover */
+button:hover {
+  cursor: pointer;
+}
+
+/* Body styles */
+body {
+  height: 100vh;
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-rows: auto 1fr; /* Change grid-template to grid-template-rows */
+  font-family: "Roboto", system-ui, sans-serif;
 }
 
-/*--SIDEBAR--*/
-
-.sidebar {
-  background-color: #06b6d4;
-  height: 100vh;
-  color: white;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: white;
-}
-
-.sidebar ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  list-style-type: none;
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+/* Header styles */
+header {
+  grid-column: 2;
+  box-shadow: 0 5px 5px 0 #ccc;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px 50px;
+  padding: 10px 30px 20px;
   align-items: center;
-  margin: 20px 10px 20px 20px;
 }
 
-.logo-text svg {
-  min-width: 2rem;
-  min-height: 2rem;
-  color: white;
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+  align-items: center;
 }
 
-.list-items {
+button {
+  background-color: transparent;
+}
+
+form button {
+  padding-top: 5px;
+}
+
+input {
+  background-color: #e4eaf0;
+  border-radius: 15px;
+  height: 1.75rem;
+}
+
+img {
+  height: 24px;
+}
+
+#profile {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+  font-weight: 600;
+}
+
+.profileImg {
+  height: 40px;
+}
+
+#profileBanner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  align-items: center;
+}
+
+.banner-name {
+  font-size: 1.5rem;
+}
+
+/* Profile Banner styles */
+#profileBanner {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin: 20px 10px 20px 20px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.75rem;
 }
 
-.list-items svg {
-  width: 1.2rem;
-  height: 1.2rem;
+#headerButtons {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 30px;
+}
+
+.header-button {
+  background-color: #3498d5;
+  height: 2rem;
   color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 20px;
+  display: grid;
+  place-content: center;
 }
 
-.list-items a {
-  margin-left: 10px;
+/* Sidebar styles */
+#sidebar {
+  background-color: #3498d5;
+  grid-row: 1 / span 2; /* Adjust grid-row */
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+  gap: 50px;
+  padding: 15px 100px 0px 15px;
 }
 
-/*--MAIN--*/
-.main {
-  background-color: #f8fafc;
-  height: 100vh;
+.side-section {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 20px 30px;
+  padding-left: 15px;
+}
+
+.side-section:first-of-type {
+  padding-left: 0;
+  column-gap: 20px;
+}
+
+/* Main Icon styles */
+.main-icon {
+  height: 50px;
+}
+
+/* Title and Side Menu styles */
+.title,
+.side-menu {
+  color: white;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.side-menu {
+  font-size: 1.25rem;
+}
+
+/* Content styles */
+#content {
+  background-color: #e4eaf0;
+  padding: 30px 20px;
+  display: grid;
+  grid-template-columns: 1fr minmax(100px, 300px);
+  gap: 30px;
+}
+
+#content h2 {
+  margin-bottom: 10px;
+}
+
+#content p {
+  color: #777;
+}
+
+/* Cards styles */
+#cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 250px;
+  gap: 30px;
+}
+
+/* Card styles */
+.card {
+  background-color: white;
+  border-left: 8px solid #efb93e;
+  border-radius: 8px;
+  box-shadow: 2px 3px 5px 0 #ccc;
+  padding: 20px 20px;
+  display: grid;
+  grid-template-rows: repeat(2, min-content) 1fr;
+}
+
+/* Card Icons styles */
+.card-icons {
+  justify-self: end;
+  align-self: end;
+}
+
+/* Announcements and Trending styles */
+#contentbar div + h2 {
+  margin-top: 20px;
+}
+
+#announcements,
+#trending {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 3px 5px 0 #ccc;
+  padding: 40px;
+}
+
+#announcements p {
+  font-size: 0.9rem;
+}
+
+hr {
+  margin: 20px 0;
+  border-bottom: 1px solid #aaa;
+}
+
+#trending {
+  display: grid;
+  row-gap: 25px;
+}
+
+.trend-project {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.trend-project img {
+  height: 40px;
+}
+
+.trend-project p {
+  font-size: 0.9rem;
+}
+
+.trend-project h5 {
+  font-weight: 500;
 }
